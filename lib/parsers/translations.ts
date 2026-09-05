@@ -7,6 +7,8 @@ const COLUMN = {
   EN: 2,
   DE: 3,
   FR: 4,
+  UK: 5,
+  HR: 6,
 } as const;
 
 const TranslationSchema = z.object({
@@ -34,5 +36,9 @@ export function parseTranslationRow(
     de: row[COLUMN.DE] ?? "",
 
     fr: row[COLUMN.FR] ?? "",
+
+    uk: row[COLUMN.UK] ?? "",
+    
+    hr: row[COLUMN.HR] ?? "",
   });
 }
