@@ -7,7 +7,7 @@ import { TranslationRow } from "./models";
 export async function getTranslations() {
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-    range: `${SHEETS.TRANSLATIONS}!A:E`,
+    range: `${SHEETS.TRANSLATIONS}!A:G`,
   });
 
   const rows = response.data.values ?? [];
@@ -20,7 +20,7 @@ export async function appendTranslation(
 ) {
   await sheets.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-    range: `${SHEETS.TRANSLATIONS}!A:E`,
+    range: `${SHEETS.TRANSLATIONS}!A:G`,
     valueInputOption: "RAW",
 
     requestBody: {
@@ -30,6 +30,8 @@ export async function appendTranslation(
         translation.en,
         translation.de,
         translation.fr,
+        translation.uk,
+        translation.hr,
       ]],
     },
   });
@@ -44,7 +46,7 @@ export async function updateTranslation(
   const response =
     await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-      range: `${SHEETS.TRANSLATIONS}!A:E`,
+      range: `${SHEETS.TRANSLATIONS}!A:G`,
     });
 
   const rows = response.data.values ?? [];
@@ -64,7 +66,7 @@ export async function updateTranslation(
   await sheets.spreadsheets.values.update({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
 
-    range: `${SHEETS.TRANSLATIONS}!A${sheetRow}:E${sheetRow}`,
+    range: `${SHEETS.TRANSLATIONS}!A${sheetRow}:G${sheetRow}`,
 
     valueInputOption: "RAW",
 
@@ -75,6 +77,8 @@ export async function updateTranslation(
         translation.en,
         translation.de,
         translation.fr,
+        translation.uk,
+        translation.hr,
       ]],
     },
   });

@@ -10,6 +10,8 @@ export default function LanguageSwitcher() {
     { code: "en", label: "EN" },
     { code: "de", label: "DE" },
     { code: "fr", label: "FR" },
+    { code: "uk", label: "UK" },
+    { code: "hr", label: "HR" },
   ] as const;
 
   return (

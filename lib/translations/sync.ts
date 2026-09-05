@@ -38,6 +38,8 @@ export async function syncTranslations() {
         en: "",
         de: "",
         fr: "",
+        uk: "",
+        hr: "",
       };
 
       await appendTranslation(row);
@@ -67,6 +69,8 @@ export async function syncTranslations() {
         en: "",
         de: "",
         fr: "",
+        uk: "",
+        hr: "",
       };
 
       const completed =
@@ -90,7 +94,9 @@ export async function syncTranslations() {
     if (
       completed.en !== existing.en ||
       completed.de !== existing.de ||
-      completed.fr !== existing.fr
+      completed.fr !== existing.fr ||
+      completed.uk !== existing.uk ||
+      completed.hr !== existing.hr
     ) {
 
       console.log(

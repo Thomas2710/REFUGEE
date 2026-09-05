@@ -32,5 +32,21 @@ export async function fillMissingTranslations(
     );
   }
 
+  if (!translated.uk) {
+    translated.uk = await provider.translate(
+      translated.source,
+      "it",
+      "uk"
+    );
+  }
+
+  if (!translated.hr) {
+    translated.hr = await provider.translate(
+      translated.source,
+      "it",
+      "hr"
+    );
+  }
+
   return translated;
 }

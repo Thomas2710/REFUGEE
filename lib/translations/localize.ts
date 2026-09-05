@@ -18,6 +18,8 @@ export function localizeMenu(
         en: translation?.en || dish.title,
         de: translation?.de || dish.title,
         fr: translation?.fr || dish.title,
+        uk: translation?.uk || dish.title,
+        hr: translation?.hr || dish.title,
       },
 
       // For now we don't translate descriptions yet.
@@ -26,6 +28,8 @@ export function localizeMenu(
         en: dish.description,
         de: dish.description,
         fr: dish.description,
+        uk: dish.description,
+        hr: dish.description,
       },
     };
   });
